@@ -2,7 +2,7 @@
 layout: post
 title: Facebook Messenger Bot
 categories: [Blog]
-tags: [python]
+tags: [graphQL, meta, facebook Messenger, javascript, glitch, devops]
 ---
 
 Yup. Another bot 🤖 was made. This time it was for my mom’s Facebook page crochet shop. In this post, I will cover the basic messenger automation, GraphQL and how to deploy to one of free tier hosts such as Glitch, Vercel or AWS ( remembered Heroku at this stage free dyno had been scraped)

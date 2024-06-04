@@ -2,7 +2,7 @@
 layout: post
 title: REST vs SOAP vs GRAPHQL API
 categories: [Blog]
-tags: [python]
+tags: [python, xml, graphQL, RestfulAPI, SOAP, shopifyAPI]
 ---
 
 This post is more about all the architectures based on my own experience. TLDR: The winner at this stage is GraphQL ,well but there is much more to dive into the topic if you read through the post.
