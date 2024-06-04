@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GoogleSheets Regex Formulas and examples
+title: Googlesheets Regex Formulas and examples
 categories: [Blog]
 tags: [regex] [googlesheet]
 ---
