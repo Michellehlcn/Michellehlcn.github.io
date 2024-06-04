@@ -23,13 +23,10 @@ SML stands for Extensible Markup Language. Here is the sample of request message
 
 A SOAP message is composed of:
 
-An envelop tag that begins and ends every message
-
-A body containing the request or response
-
-A header if a message must determine a any specifics or extra requirements
-
-A fault informing of any errors in processing
+- An envelop tag that begins and ends every message
+- A body containing the request or response
+- A header if a message must determine a any specifics or extra requirements
+- A fault informing of any errors in processing
 
 ```xml
 <soapenv:Envelope
