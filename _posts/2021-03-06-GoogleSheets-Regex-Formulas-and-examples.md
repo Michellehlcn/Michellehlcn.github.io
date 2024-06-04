@@ -2,7 +2,7 @@
 layout: post
 title: Googlesheets Regex Formulas and examples
 categories: [Blog]
-tags: [regex] [googlesheet]
+tags: [regex, googlesheet]
 ---
 
 The Sheets have been getting tremendous attentions from professional and amateur users (if needless to mention Microsoft365 who joined later in the game). They are online or cloud application, meaning you can get access from every devices or everywhere. However, Google Sheets also can be used as a powerful scrapper which allows you to query the latest or specific version of stored data using provided API. Data can be parsing and optionally converting into structure which help users monitor them as an interactive sheet.
