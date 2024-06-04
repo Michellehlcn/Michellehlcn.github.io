@@ -11,7 +11,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-<img style="float: right; height: 500px;" src="./../images/profile.jpeg" alt="">
+<img style="float: right; height: 300px;" src="./../images/profile.jpeg" alt="">
 
 I am a **Software Engineer** focusing on infrastructure, programming, Linux, open source software, DevOps, containerization, and the cloud. At the moment, I am learning building Kotlin/IOS mobile application.
 
