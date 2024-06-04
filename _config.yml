@@ -11,7 +11,7 @@ lang: en
 
 plugins:
   - jekyll-analytics
-  - jekyll-seo-tag
+
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
 timezone: 
 
