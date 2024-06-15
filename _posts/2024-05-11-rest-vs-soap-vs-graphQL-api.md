@@ -64,6 +64,145 @@ There are few more tools to convert, here is an example https://codebeautify.org
 	</SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 ```
+Here is the sample code for converting  the SOAP envelope response to JSON.
+
+```python
+def get_content(d): #dict {}
+    if '@xsi:type' in d.keys():
+        if d['@xsi:type'] == "ns2:Map" or d['@xsi:type'] == "ns2: Map": 
+            if 'item' in d.keys():
+                if type(d["item"]) is list: # []
+                    list_item = []
+                    for i_ in d["item"]:
+                        value = get_content(i_)
+                        list_item.append(value)
+                    return list_item
+                elif type(d["item"]) is dict: # {}
+                    value =get_content(d["item"])
+                    return value
+            elif '@xsi:nil' in d.keys():
+                return "-"
+            elif 'key' in d.keys():
+                key =""
+                value=""
+
+                # processing key
+                if type(d["key"]) is list:
+                    key =[]
+                    for i in d["key"]:
+                        value = get_content(i)
+                        key.append(value)
+                elif type(d["key"]) is dict:
+                    key = get_content(d["key"])
+                
+                #processing value
+                if type(d["value"]) is list:
+                    value = []
+                    for j in d["value"]:
+                        value = get_content(j)
+                        value.append(value)
+                elif type(d["value"]) is dict:
+                    value = get_content(d["value"])
+                
+                return {key : value}
+            else:
+                return "-"
+          
+        elif d["@xsi:type"] == "xsd:string" or d["@xsi:type"] == "xsd: string":
+            try:
+                value =  d["#text"]
+                return value
+            except Exception as error:
+                return "-"
+        elif d["@xsi:type"] == "xsd:float":
+            try:
+                value = d["#text"]
+                return value
+            except Exception as error:
+                return "-"
+        elif d["@xsi:type"] == "xsd:int":
+            try:
+                value = d["#text"]
+                return value
+            except Exception as error:
+                return "-"
+        elif d["@xsi:type"] == "SOAP-ENC:Array" or d["@xsi:type"] == "SOAP-ENC: Array" :
+            if d['@SOAP-ENC:arrayType'] ==  'xsd:ur-type[0]' :
+                return "-"
+            elif 'item' in d.keys():
+               
+                try :
+                    if type(d["item"]) is list:
+                        _group = []
+                        for _ in d["item"]:
+                            value_ = get_content(_)
+                            _group.append(value_)
+                            if value_ is None:
+                                print("value ERROR!!!!" +str(_))
+
+                        return _group
+                    if type(d["item"]) is dict:
+                        value = get_content(d["item"])
+                        if value is None:
+                            print("value dict ERROR!!!!" +str(d["item"]))
+                        return value
+                except Exception as error:
+                    print("value item array ERROR!!!!" + str(error) +str(d))
+                    return "-"
+            elif 'key' in d.keys():
+                key =""
+                value=""
+
+                # processing key
+                if type(d["key"]) is list:
+                    key =[]
+                    for i in d["key"]:
+                        value = get_content(i)
+                        key.append(value)
+                elif type(d["key"]) is dict:
+                    key = get_content(d["key"])
+                
+                #processing value
+                if type(d["value"]) is list:
+                    value = []
+                    for j in d["value"]:
+                        value = get_content(j)
+                        value.append(value)
+                elif type(d["value"]) is dict:
+                    value = get_content(d["value"])
+                
+                return {key : value}
+                
+            else:
+                print("Invalid value" + str(d))
+                return "-"
+    else:  #'@xsi:type': 'SOAP-ENC:Array',
+        if '@xsi:nil' in d.keys():
+            return "-"
+        elif 'key' in d.keys():
+            key =""
+            value=""
+
+            # processing key
+            if type(d["key"]) is list:
+                key =[]
+                for i in d["key"]:
+                    value = get_content(i)
+                    key.append(value)
+            elif type(d["key"]) is dict:
+                key = get_content(d["key"])
+            
+            #processing value
+            if type(d["value"]) is list:
+                value = []
+                for j in d["value"]:
+                    value = get_content(j)
+                    value.append(value)
+            elif type(d["value"]) is dict:
+                value = get_content(d["value"])
+            
+            return {key : value}
+```
 In general, I am not really a big fan of SOAP because its heavy overhead and it is getting errors when a single node had not been tagged or contained a value.
 
 ## REST (Representational State Transfer)
