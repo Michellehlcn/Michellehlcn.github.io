@@ -40,6 +40,11 @@ Then clone it to your local machine and run:
 ```console
 $ bundle
 ```
+## Running Local Server
+
+```console
+$ bundle exec jekyll s
+```
 
 ## Usage
 
