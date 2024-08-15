@@ -1,19 +1,11 @@
 ---
-title: About
-
-# The About page
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# © 2017-2019 Cotes Chung
-# MIT License
-# the default layout is 'page'
-icon: fas fa-info-circle
-order: 4
+layout: Gallery
+icon: fas fa-tags
+order: 5
 ---
+<img style="float: right; height: 300px;" src="./../images/profile.jpeg" alt="">
 
-<img style="float: right; height: 300px;" src="./../images/IMG_2352.jpg" alt="">
-
-I am a **Software Engineer** focusing on infrastructure, programming, Linux, open source software, DevOps, containerization, and streaming events (Kafka)
+I am a **Software Engineer** focusing on infrastructure, programming, Linux, open source software, DevOps, containerization, and the cloud. At the moment, I am learning building Kotlin/IOS mobile application.
 
 I have worked in many different languages and platforms but currently that is primarily Python, Javascript, Java and shell scripting. I’m looking to collaborate on projects which I can add up the value and further ideas.
 
